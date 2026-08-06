@@ -1,0 +1,3 @@
+- Move proposal summaries out of the repo: PROPOSAL.md is now gitignored and its content rides in the PR description instead of being committed to main.
+- Fix invalid YAML frontmatter in SKILL.md: the description contained an unquoted colon, so GitHub and skill tooling could not parse the header. The value is now quoted, wording unchanged.
+- Upgrade the PR workflow to fill the pull request description from the proposal summary.

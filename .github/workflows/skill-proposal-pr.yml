@@ -9,7 +9,8 @@ jobs:
   pr:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr create --repo ${{ github.repository }} --base main --head ${{ github.ref_name }} --title "Skill proposal: ${{ github.ref_name }}" --body "Automated PR from the Hermes skill pipeline. Summary is in PROPOSAL.md at the top of the diff." || echo "PR already exists or nothing to do"
+          gh pr create --repo ${{ github.repository }} --base main --head ${{ github.ref_name }} --title "Skill proposal: ${{ github.ref_name }}" --body "$(git log -1 --pretty=%b)" || gh pr edit ${{ github.ref_name }} --body "$(git log -1 --pretty=%b)"

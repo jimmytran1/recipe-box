@@ -1,6 +1,6 @@
 ---
 name: recipe-box
-description: Use when the user wants to save a recipe (from a TikTok/video link, screenshot, photo, recipe website URL, or pasted text) into their recipe collection, or ask questions about their saved recipes: measurements, scaling servings, ingredient substitutions, nutrition and macros, searching by ingredient, or meal planning and grocery lists.
+description: "Use when the user wants to save a recipe (from a TikTok/video link, screenshot, photo, recipe website URL, or pasted text) into their recipe collection, or ask questions about their saved recipes: measurements, scaling servings, ingredient substitutions, nutrition and macros, searching by ingredient, or meal planning and grocery lists."
 ---
 
 # Recipe Box
