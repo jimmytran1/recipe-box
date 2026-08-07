@@ -29,16 +29,16 @@ You accept four kinds of input. In all cases, produce ONE standardized recipe fi
 Before saving, normalize:
 - Convert vague amounts to explicit measurements where the source gives them. Never invent quantities. If an amount is missing, write `to taste` or `[amount not given]`.
 - Record servings/yield. If absent, estimate and mark it `(est.)`.
-- Add 3 to 6 tags (cuisine, protein, meal type, dietary, effort) to power searching and planning.
+- Add 3 to 8 specific tags to power searching and planning. Cover the applicable categories: meal type (`breakfast`, `lunch`, `dinner`, `snack`, `dessert`), cuisine (`asian`, `italian`, `mexican`, etc.), nutrition or dietary (`high-protein`, `vegetarian`, `gluten-free`, etc.), preparation or storage (`meal-prep`, `weeknight`, `quick`, `freezer-friendly`), and main protein or ingredient (`chicken`, `beef`, `tofu`, etc.). Only add tags supported by the source and recipe.
 - Always keep the original source link/handle for attribution.
 
-### Nutrition: always ask
+### Nutrition
 
 Every recipe must have a Nutrition section with per-serving calories, protein, carbs, and fat. Handle it in this order:
 
 1. If the source (caption, video text, website, or image) already lists any nutrition numbers, capture them and mark them `(from source)`.
 2. For anything the source does not give, compute a per-serving estimate from the ingredient list and servings, and mark it `(est.)`. You cannot read nutrition off a video image, so estimate from ingredients when the caption has no numbers.
-3. After drafting the recipe, ALWAYS ask the user a short prompt to confirm or improve the nutrition and gather anything else worth storing, for example: "I estimated about 520 cal, 34g protein, 45g carbs, 18g fat per serving. Do you have exact numbers from the video, and any allergens or dietary notes to add?" Update the file with whatever they provide.
+3. Include the nutrition values and their source labels in the final recipe audit below. Use that single audit to confirm or improve the nutrition and gather any missing dietary notes.
 
 Never present an estimate as if it were exact. Keep the `(est.)` and `(from source)` labels.
 
@@ -71,7 +71,19 @@ Never present an estimate as if it were exact. Keep the `(est.)` and `(from sour
 <substitutions the source mentioned, tips, or leave blank>
 ```
 
-After writing the file, update `recipes/_index.md` and confirm to the user with the title and a one-line summary.
+### Final recipe audit: always confirm everything
+
+After writing the recipe file and updating `recipes/_index.md`, present a complete audit in the chat. Do not stop at the title and a one-line summary. Include:
+
+- **Title, servings, and time**: quote every saved value and identify estimates.
+- **Tags by category**: show meal type, cuisine, nutrition or dietary, preparation or storage, and main protein or ingredient tags. Omit inapplicable categories rather than inventing tags.
+- **Nutrition per serving**: show calories, protein, carbs, fat, and any additional values saved, preserving every `(est.)` and `(from source)` label.
+- **Ingredients**: list every ingredient with its saved amount, including optional ingredients and grouped components.
+- **Steps**: give a concise numbered summary that covers the full cooking method.
+- **Notes**: show substitutions, allergens, dietary flags, storage guidance, and any other saved notes. State `none listed` when a field is empty.
+- **Source**: show the original link or attribution.
+
+End with a direct request: `Reply confirmed, or tell me what to change.` If the user provides corrections, update both the recipe file and `_index.md`, then repeat the complete audit. The recipe is confirmed only when the user explicitly approves it.
 
 ## Answering questions
 
