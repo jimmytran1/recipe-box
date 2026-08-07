@@ -1,3 +1,0 @@
-- Gitignore PROPOSAL.md: proposal summaries now ride in the PR description, never committed to main.
-- Fix invalid YAML frontmatter in SKILL.md: quote the description value (it contains a colon). Wording unchanged.
-- Upgrade the PR workflow: checkout the branch and fill the PR description from the proposal commit message.
